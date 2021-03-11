@@ -111,3 +111,80 @@ const link = document.querySelector('a[href^="http"]');
 link.setAttribute('href', 'https://google.com');
 
 console.log(link);
+
+const section = document.querySelector(".animais");
+section.clientWidth;
+section.clientHeight; // height + padding
+section.offsetHeight; // height + padding + border
+section.scrollHeight; // height total, mesmo dentro de scroll
+// Também serve para o width!
+section.offsetTop; // Distância entre o topo do elemento e o topo da página
+section.offsetLeft; // Distância entre o canto esquerdo do elemento e o canto esquerdo da página
+
+const listaAnimais = document.querySelector(".animais-lista");
+const height = listaAnimais.scrollHeight;
+const animaisTop = listaAnimais.offsetTop;
+
+const primeiroh2 = document.querySelector("h2");
+
+const rect = section.getBoundingClientRect();
+rect.height; // height do elemento
+rect.width; // width do elemento
+rect.top; // distância entre o topo do elemento e o scroll
+
+const testeRect = primeiroh2.getBoundingClientRect(); // retorna um objeto pode acessar os itens individualmente
+
+window.innerHeight; // width da janela
+window.outerWidth; // soma dev tools também
+window.innerHeight; // height da janela
+window.outerHeight; // soma a barra de endereço
+window.pageYOffset; // distância total do scroll horizontal
+window.pageXOffset; // distância total do scroll vertical
+
+// if (window.innerWidth < 600){
+//     console.log('Tela menor que 600px');
+// }
+
+// // media query para verificar a largura do browser
+// const small = window.matchMedia('(max-width: 600px)');
+// if (small.matches) {
+//     console.log('Usuário mobile');
+// }else {
+//     console.log('Usuário desktop');
+// }
+
+const primeiraImagem = document.querySelector("img");
+const imgHeight = primeiraImagem.offsetTop;
+// console.log(imgHeight);
+
+// pega a largura de cada imagem e soma usando o foreach
+// function somaLargura() {
+//   const todasImagens = document.querySelectorAll("img");
+//   let soma = 0;
+//   todasImagens.forEach((imagem) => {
+//     soma = soma + imagem.offsetWidth;
+//   });
+//   console.log(soma);
+// }
+
+// window.onload = function () {
+//   somaLargura();
+// };
+
+// verifica o heigh e a width dos "a" no site verifica os pixels
+const links = document.querySelectorAll("a");
+links.forEach((link) => {
+  const linkWidth = link.offsetWidth;
+  const linkHeight = link.offsetHeight;
+  if (linkWidth && linkHeight < 48) {
+    console.log("Não possui mínimo recomendado");
+  } else {
+    console.log("Possuem o mínimo recomendado");
+  }
+});
+
+const browserSmall = window.matchMedia('(max-width: 720px)').matches;
+if (browserSmall) {
+    const menu = document.querySelector('.menu');
+    menu.classList.add('menu-mobile');
+}
