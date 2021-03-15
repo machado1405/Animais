@@ -12,6 +12,10 @@ dl {
   padding: 0px;
 }
 
+.aumentar-fonte {
+  font-size: 50px;
+}
+
 img {
   display: block;
   max-width: 100%;
