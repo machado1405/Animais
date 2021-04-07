@@ -1,4 +1,4 @@
-const activClass = "ativo";
+const activClass = 'ativo';
 
 function initTabNav() {
   const tabMenu = document.querySelectorAll(".js-tabmenu li");
@@ -15,7 +15,7 @@ function initTabNav() {
     }
 
     tabMenu.forEach((itemMenu, index) => {
-      itemMenu.addEventListener("click", () => {
+      itemMenu.addEventListener('click', () => {
         activeTab(index);
       });
     });
@@ -35,7 +35,7 @@ function initAccordion() {
     }
 
     accordionList.forEach((item) => {
-      item.addEventListener("click", activeAccordion);
+      item.addEventListener('click', activeAccordion);
     });
   } else {
     console.log("Erro, página não possui elemento necessário");
@@ -61,7 +61,7 @@ function initScrollSuave() {
   }
 
   linksInternos.forEach((link) => {
-    link.addEventListener("click", scrollToSection);
+    link.addEventListener('click', scrollToSection);
   });
 }
 
