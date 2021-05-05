@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      document.documentElement.className += " js";
-    </script>
-    <link rel="stylesheet" href="css/style.css" />
 
-    <title>Animais Fantásticos</title>
-  </head>
-  <body>
-    <div class="grid-container">
-    <nav class="menu" [data-menu="suave"]>
-      <ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    document.documentElement.className += " js";
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Animais Fantásticos</title>
+</head>
+
+<body>
+  <div class="grid-container">
+    <nav class="menu" data-menu="suave">
+      <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul data-menu="list" id="menu">
         <li><a href="#animais">Animais</a></li>
         <li data-dropdown>
           <a href="sobre.html">Sobre</a>
@@ -258,6 +261,28 @@
       </dl>
     </section>
 
+    <section class="grid-section numeros" data-anime="scroll">
+      <h1 class="titulo">Números</h1>
+      <div class="numeros-grid">
+        <div class="numero-animal">
+          <h3>Lobos</h3>
+          <span data-numero>4874</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Raposas</h3>
+          <span data-numero>5374</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Esquilos</h3>
+          <span data-numero>12340</span>
+        </div>
+        <div class="numero-animal">
+          <h3>Ursos</h3>
+          <span data-numero>230</span>
+        </div>
+      </div>
+    </section>
+
     <section class="grid-section contato" data-anime="scroll" id="contato">
       <h1 class="titulo">Contato</h1>
 
@@ -270,6 +295,7 @@
         <li>+55249999-9999</li>
         <li>Rua do conte, 21</li>
         <li>Rio de Janeiro RJ</li>
+        <li data-semana="1,2,3,4,5" data-horario="8,18">Seg à sex das 8 às 18</li>
       </ul>
     </section>
 
@@ -290,7 +316,8 @@
     </div>
   </section>
 
-    <script type="module" src="./js/script-efeitos.js"></script>
-    <script src="./js/script.js"></script>
-  </body>
+  <script type="module" src="./js/script-efeitos.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
 </html>
