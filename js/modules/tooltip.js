@@ -43,6 +43,5 @@ function criarTooltipBox(element) {
     tooltipBox.classList.add('tooltip');
     tooltipBox.innerText = text;
     document.body.appendChild(tooltipBox);
-    console.log(element);
     return tooltipBox;
 }

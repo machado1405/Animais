@@ -175,7 +175,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.dados ::before {
+.dados li::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -330,4 +330,11 @@ body {
 
 [data-semana].aberto::after {
   background: #3f4;
+}
+
+.btc-preco {
+  background: #3f4;
+  padding: .2rem .5rem;
+  font-weight: bold;
+  border-radius: 2px;
 }
