@@ -1,22 +1,54 @@
-export default function initScrollSuave() {
-  const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]');
-  function scrollToSection(event) {
-    event.preventDefault();
-    const href = event.currentTarget.getAttribute("href");
-    const section = document.querySelector(href);
-    section.scrollIntoView({
-      behavior: "smooth",
-    });
+// export default function initScrollSuave() {
+//   const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]');
+//   function scrollToSection(event) {
+//     event.preventDefault();
+//     const href = event.currentTarget.getAttribute("href");
+//     const section = document.querySelector(href);
+//     section.scrollIntoView({
+//       behavior: "smooth",
+//     });
 
-    // Forma alternativa
-    // const topo = section.offsetTop;
-    // window.scrollTo({
-    //     top: topo,
-    //     behavior: 'smooth',
-    // });
+//     Forma alternativa
+//     const topo = section.offsetTop;
+//     window.scrollTo({
+//         top: topo,
+//         behavior: 'smooth',
+//     });
+//   }
+
+//   linksInternos.forEach((link) => {
+//     link.addEventListener('click', scrollToSection);
+//   });
+// } 
+
+export default class ScrollSuave {
+  constructor(links, options) {
+    this.linksInternos = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = { behavior: 'smooth', block: 'start' };
+    } else {
+      this.options = options;
+    }
+    this.scrollToSection = this.scrollToSection.bind(this); // bind de função de callback
+  };
+
+  scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute('href');
+    const section = document.querySelector(href);
+    section.scrollIntoView(this.options);
   }
 
-  linksInternos.forEach((link) => {
-    link.addEventListener('click', scrollToSection);
-  });
+  addLinkEvent() {
+    this.linksInternos.forEach((link) => {
+      link.addEventListener('click', this.scrollToSection);
+    });
+  }
+
+  init() {
+    if (this.linksInternos.length) {
+      this.addLinkEvent();
+    }
+    return this;
+  }
 }
